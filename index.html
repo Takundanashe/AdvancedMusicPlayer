@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>-->
+    <script src="https://kit.fontawesome.com/a12f58ad39.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <div class="music-player">
+            <nav>
+                <div class="circle" onclick="openPlaylist()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="media/468-thumbnail.png" class="song-img">
+            <h1></h1>
+            <p></p>
+            <div class="timer">
+                <div class="currentime"></div>
+                 <div class="totaltime"></div>
+            </div>
+            
+           <input type="range" min="0" max="1" step="0.1" value="1" id="volume">
+           <span class="vollabel">vol</span>
+            <audio id="song"> </audio>
+            <input type="range" value=0 id="progress">
+            
+            <div class="controls">
+                <div onclick="playPrevious()"><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div onclick="playNext()"><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+        <div class="music-list">
+            <div class="closebtn" onclick="closePlaylist()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="addmusic"> 
+                <label for="input-file" id="drop-area">
+                    <input type="file" accept="audio/mpeg" id="input-file" hidden>
+                    <div id="img-view">
+                        <img src="media/508-icon.png">
+                        <p>Drag and drop or click here to upload</p>
+                        <span>Upload any songs from desktop</span>
+                    </div>
+                </label>
+            </div>
+            <div class="playlist">
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="addmusic.js"></script>
+</body>
+</html>
